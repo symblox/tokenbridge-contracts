@@ -1,0 +1,1613 @@
+{
+  "contractName": "RewardableHomeBridgeNativeToErc",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_feeManager",
+          "type": "address"
+        }
+      ],
+      "name": "setFeeManagerContract",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "feeManagerContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getFeeManagerMode",
+      "outputs": [
+        {
+          "name": "mode",
+          "type": "bytes4"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "feeAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "name": "transactionHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "FeeDistributedFromAffirmation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "feeAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "name": "transactionHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "FeeDistributedFromSignatures",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "setHomeFee",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_fee",
+          "type": "uint256"
+        }
+      ],
+      "name": "setForeignFee",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getForeignFee",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getHomeFee",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_fee\",\"type\":\"uint256\"}],\"name\":\"setForeignFee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_fee\",\"type\":\"uint256\"}],\"name\":\"setHomeFee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_feeManager\",\"type\":\"address\"}],\"name\":\"setFeeManagerContract\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getHomeFee\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"feeManagerContract\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getFeeManagerMode\",\"outputs\":[{\"name\":\"mode\",\"type\":\"bytes4\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getForeignFee\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"feeAmount\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"transactionHash\",\"type\":\"bytes32\"}],\"name\":\"FeeDistributedFromAffirmation\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"feeAmount\",\"type\":\"uint256\"},{\"indexed\":true,\"name\":\"transactionHash\",\"type\":\"bytes32\"}],\"name\":\"FeeDistributedFromSignatures\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{\"feeManagerContract()\":{\"details\":\"Retrieves the address of the fee manager contract used.\",\"return\":\"address of the fee manager contract.\"},\"getFeeManagerMode()\":{\"details\":\"Retrieves the mode of the used fee manager.\",\"return\":\"manager mode identifier, or zero bytes otherwise.\"},\"owner()\":{\"details\":\"Tells the address of the owner\",\"return\":\"the address of the owner\"},\"setFeeManagerContract(address)\":{\"details\":\"Updates the address of the used fee manager contract. Only contract owner can call this method. If during this operation, home fee is changed, it is highly recommended to stop the bridge operations first. Otherwise, pending signature requests can become a reason for imbalance between two bridge sides.\",\"params\":{\"_feeManager\":\"address of the new fee manager contract, or zero address to disable fee collection.\"}},\"setForeignFee(uint256)\":{\"details\":\"Updates the fee percentage for foreign->home bridge operations. Only owner is allowed to call this method.\",\"params\":{\"_fee\":\"new value for fee percentage.\"}},\"setHomeFee(uint256)\":{\"details\":\"Updates the fee percentage for home->foreign bridge operations. Only owner is allowed to call this method. If during this operation, home fee is changed, it is highly recommended to stop the bridge operations first. Otherwise, pending signature requests can become a reason for imbalance between two bridge sides.\",\"params\":{\"_fee\":\"new value for fee percentage.\"}},\"transferOwnership(address)\":{\"details\":\"Allows the current owner to transfer control of the contract to a newOwner.\",\"params\":{\"newOwner\":\"the address to transfer ownership to.\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/native_to_erc20/RewardableHomeBridgeNativeToErc.sol\":\"RewardableHomeBridgeNativeToErc\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/interfaces/IUpgradeabilityOwnerStorage.sol\":{\"keccak256\":\"0xa6b5c96c8165d49676d227a9b7070faffdb7325906a598797fe66ca5917e76ef\",\"urls\":[\"bzzr://14c7b605baba9012f1386dce78e5b2665c682ec6a5bae3f4a6ec15f98ba40aa9\"]},\"/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeability/EternalStorage.sol\":{\"keccak256\":\"0x8f2df79a1cda812d4be25da8f2b138f9b7492e76da1dfba21d87012e649cc51c\",\"urls\":[\"bzzr://0846d08e1b7a84e541ae31c91d2c0b34d88cf3abbd18891ec6eedeea7e958af2\"]},\"/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/FeeTypes.sol\":{\"keccak256\":\"0x616a31f082774642c463dd50b180ce659663dfb317ffc4983d41821b2b6f230a\",\"urls\":[\"bzzr://abc13bd945f3332fe35c4e5cd3ff0b5ce06640427cf66753711b15ad8d659b5f\"]},\"/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/Ownable.sol\":{\"keccak256\":\"0xa61d31759a177fc38a5dcf34387cfc9870bbe64f946c14c380d13ddcd9aa6113\",\"urls\":[\"bzzr://7d8b5611ce1d97b28de5d10d5569fe2bd710e851f55b02d628b7a881ca9a9b40\"]},\"/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/RewardableBridge.sol\":{\"keccak256\":\"0xc7d3004516816357913f230f70a3dff59e87a051d12b4415e20dc2e7344d57f2\",\"urls\":[\"bzzr://54ab63496f93ca6a3f1fac1b0f5eb777df7bad970d2ce7688c38c512f18e1d0a\"]},\"/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/native_to_erc20/RewardableHomeBridgeNativeToErc.sol\":{\"keccak256\":\"0x75cddd0657f611d2130ca202f9b4c06a0743fe23524816d7e662975d71dc804b\",\"urls\":[\"bzzr://338e5ec26fa92d1622cd6dbd651f3b2a474c89d1f8b21a543d6fef7cc96803f9\"]},\"openzeppelin-solidity/contracts/AddressUtils.sol\":{\"keccak256\":\"0x5ed3dc711dbb34917afff3c753adf3b0580514d1339cfedaa5a73645d8ac9b56\",\"urls\":[\"bzzr://d597eeb695a3d64766453239e973ddd65994c258ab8d5cab0d90103033ce85fc\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610892806100206000396000f3006080604052600436106100985763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663286c4066811461009d57806334a9e148146100b757806360756f7c146100cf5780638da5cb5b146100f057806394da17cd14610121578063dbe03a8b14610148578063f2ba95611461015d578063f2fde38b146101a4578063ffd66196146101c5575b600080fd5b3480156100a957600080fd5b506100b56004356101da565b005b3480156100c357600080fd5b506100b5600435610219565b3480156100db57600080fd5b506100b5600160a060020a0360043516610255565b3480156100fc57600080fd5b5061010561030d565b60408051600160a060020a039092168252519081900360200190f35b34801561012d57600080fd5b50610136610364565b60408051918252519081900360200190f35b34801561015457600080fd5b50610105610382565b34801561016957600080fd5b506101726103d9565b604080517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff199092168252519081900360200190f35b3480156101b057600080fd5b506100b5600160a060020a0360043516610464565b3480156101d157600080fd5b50610136610489565b6101e261030d565b600160a060020a031633146101f657600080fd5b610216610201610382565b826000805160206108278339815191526104a2565b50565b61022161030d565b600160a060020a0316331461023557600080fd5b610216610240610382565b826000805160206108478339815191526104a2565b61025d61030d565b600160a060020a0316331461027157600080fd5b600160a060020a038116158061028b575061028b81610623565b151561029657600080fd5b7f779a349c5bee7817f04c960f525ee3e2f2516078c38c68a3149787976ee837e560005260026020527fc155b21a14c4592b97825e495fbe0d2705fb46420018cac5bfa7a09c43fae517805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b7f02016836a56b71f0d02689e69e326f4f4c1b9057164ef592671cf0d37c8040c060005260026020527fb7802e97e87ef2842a6cce7da7ffaeaedaa2f61a6a7870b23d9d01fc9b73712e54600160a060020a031690565b600061037d60008051602061084783398151915261062b565b905090565b7f779a349c5bee7817f04c960f525ee3e2f2516078c38c68a3149787976ee837e560005260026020527fc155b21a14c4592b97825e495fbe0d2705fb46420018cac5bfa7a09c43fae51754600160a060020a031690565b6040805160048152602481019091526020810180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167ff2ba9561000000000000000000000000000000000000000000000000000000001790526000908161043c610382565b9050600460008351602085016000855af28060203d14161561045e5760005193505b50505090565b61046c61030d565b600160a060020a0316331461048057600080fd5b6102168161074f565b600061037d60008051602061082783398151915261062b565b6000816000805160206108478339815191528114806104ce575060008051602061082783398151915281145b15156104d957600080fd5b6000805160206108478339815191528314610514577f286c406600000000000000000000000000000000000000000000000000000000610536565b7f34a9e148000000000000000000000000000000000000000000000000000000005b60408051602480820188905282518083039091018152604490910182526020810180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19851617815291518151939550600160a060020a038916939192909182919080838360005b838110156105d15781810151838201526020016105b9565b50505050905090810190601f1680156105fe5780820380516001836020036101000a031916815260200191505b50915050600060405180830381855af4915050151561061c57600080fd5b5050505050565b6000903b1190565b6000808060608460008051602061084783398151915281148061065b575060008051602061082783398151915281145b151561066657600080fd5b61066e610382565b935060008051602061084783398151915286146106ab577fffd66196000000000000000000000000000000000000000000000000000000006106cd565b7f94da17cd000000000000000000000000000000000000000000000000000000005b604080516004815260248101909152602080820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19851617815282519396509194509160009182885af28060203d1416156107455760005195505b5050505050919050565b600160a060020a038116151561076457600080fd5b7f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e061078d61030d565b60408051600160a060020a03928316815291841660208301528051918290030190a17f02016836a56b71f0d02689e69e326f4f4c1b9057164ef592671cf0d37c8040c060005260026020527fb7802e97e87ef2842a6cce7da7ffaeaedaa2f61a6a7870b23d9d01fc9b73712e805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600deb7f3adca07d6d1f708c1774389db532a2b2f18fd05a62b957e4089f4696ed589d93e5e92f7e37e490c25f0e50f7f4aad7cc94b308a566553280967be38bcf1a165627a7a723058204b2259efb03d9872f7e2cd3e6d94f42db1cf47c7d6c334626eecf8f9a15644eb0029",
+  "deployedBytecode": "0x6080604052600436106100985763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663286c4066811461009d57806334a9e148146100b757806360756f7c146100cf5780638da5cb5b146100f057806394da17cd14610121578063dbe03a8b14610148578063f2ba95611461015d578063f2fde38b146101a4578063ffd66196146101c5575b600080fd5b3480156100a957600080fd5b506100b56004356101da565b005b3480156100c357600080fd5b506100b5600435610219565b3480156100db57600080fd5b506100b5600160a060020a0360043516610255565b3480156100fc57600080fd5b5061010561030d565b60408051600160a060020a039092168252519081900360200190f35b34801561012d57600080fd5b50610136610364565b60408051918252519081900360200190f35b34801561015457600080fd5b50610105610382565b34801561016957600080fd5b506101726103d9565b604080517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff199092168252519081900360200190f35b3480156101b057600080fd5b506100b5600160a060020a0360043516610464565b3480156101d157600080fd5b50610136610489565b6101e261030d565b600160a060020a031633146101f657600080fd5b610216610201610382565b826000805160206108278339815191526104a2565b50565b61022161030d565b600160a060020a0316331461023557600080fd5b610216610240610382565b826000805160206108478339815191526104a2565b61025d61030d565b600160a060020a0316331461027157600080fd5b600160a060020a038116158061028b575061028b81610623565b151561029657600080fd5b7f779a349c5bee7817f04c960f525ee3e2f2516078c38c68a3149787976ee837e560005260026020527fc155b21a14c4592b97825e495fbe0d2705fb46420018cac5bfa7a09c43fae517805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b7f02016836a56b71f0d02689e69e326f4f4c1b9057164ef592671cf0d37c8040c060005260026020527fb7802e97e87ef2842a6cce7da7ffaeaedaa2f61a6a7870b23d9d01fc9b73712e54600160a060020a031690565b600061037d60008051602061084783398151915261062b565b905090565b7f779a349c5bee7817f04c960f525ee3e2f2516078c38c68a3149787976ee837e560005260026020527fc155b21a14c4592b97825e495fbe0d2705fb46420018cac5bfa7a09c43fae51754600160a060020a031690565b6040805160048152602481019091526020810180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167ff2ba9561000000000000000000000000000000000000000000000000000000001790526000908161043c610382565b9050600460008351602085016000855af28060203d14161561045e5760005193505b50505090565b61046c61030d565b600160a060020a0316331461048057600080fd5b6102168161074f565b600061037d60008051602061082783398151915261062b565b6000816000805160206108478339815191528114806104ce575060008051602061082783398151915281145b15156104d957600080fd5b6000805160206108478339815191528314610514577f286c406600000000000000000000000000000000000000000000000000000000610536565b7f34a9e148000000000000000000000000000000000000000000000000000000005b60408051602480820188905282518083039091018152604490910182526020810180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19851617815291518151939550600160a060020a038916939192909182919080838360005b838110156105d15781810151838201526020016105b9565b50505050905090810190601f1680156105fe5780820380516001836020036101000a031916815260200191505b50915050600060405180830381855af4915050151561061c57600080fd5b5050505050565b6000903b1190565b6000808060608460008051602061084783398151915281148061065b575060008051602061082783398151915281145b151561066657600080fd5b61066e610382565b935060008051602061084783398151915286146106ab577fffd66196000000000000000000000000000000000000000000000000000000006106cd565b7f94da17cd000000000000000000000000000000000000000000000000000000005b604080516004815260248101909152602080820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19851617815282519396509194509160009182885af28060203d1416156107455760005195505b5050505050919050565b600160a060020a038116151561076457600080fd5b7f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e061078d61030d565b60408051600160a060020a03928316815291841660208301528051918290030190a17f02016836a56b71f0d02689e69e326f4f4c1b9057164ef592671cf0d37c8040c060005260026020527fb7802e97e87ef2842a6cce7da7ffaeaedaa2f61a6a7870b23d9d01fc9b73712e805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600deb7f3adca07d6d1f708c1774389db532a2b2f18fd05a62b957e4089f4696ed589d93e5e92f7e37e490c25f0e50f7f4aad7cc94b308a566553280967be38bcf1a165627a7a723058204b2259efb03d9872f7e2cd3e6d94f42db1cf47c7d6c334626eecf8f9a15644eb0029",
+  "sourceMap": "60:1118:158:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;60:1118:158;;;;;;;",
+  "deployedSourceMap": "60:1118:158:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;851:121;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;851:121:158;;;;;;;539:115;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;539:115:158;;;;;3464:222:95;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;3464:222:95;-1:-1:-1;;;;;3464:222:95;;;;;1732:92:93;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1732:92:93;;;;;;;;-1:-1:-1;;;;;1732:92:93;;;;;;;;;;;;;;1083:93:158;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1083:93:158;;;;;;;;;;;;;;;;;;;;2876:120:95;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2876:120:95;;;;2302:432;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2302:432:95;;;;;;;;-1:-1:-1;;2302:432:95;;;;;;;;;;;;;;1992:100:93;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1992:100:93;-1:-1:-1;;;;;1992:100:93;;;;;978:99:158;;8:9:-1;5:2;;;30:1;27;20:12;5:2;978:99:158;;;;851:121;783:7:93;:5;:7::i;:::-;-1:-1:-1;;;;;769:21:93;:10;:21;761:30;;;;;;917:48:158;925:20;:18;:20::i;:::-;947:4;-1:-1:-1;;;;;;;;;;;917:7:158;:48::i;:::-;851:121;:::o;539:115::-;783:7:93;:5;:7::i;:::-;-1:-1:-1;;;;;769:21:93;:10;:21;761:30;;;;;;602:45:158;610:20;:18;:20::i;:::-;632:4;-1:-1:-1;;;;;;;;;;;602:7:158;:45::i;3464:222:95:-;783:7:93;:5;:7::i;:::-;-1:-1:-1;;;;;769:21:93;:10;:21;761:30;;;;;;-1:-1:-1;;;;;3553:25:95;;;;:65;;;3582:36;3606:11;3582:23;:36::i;:::-;3545:74;;;;;;;;563:66;3629:36;;:14;:36;;;:50;;-1:-1:-1;;3629:50:95;-1:-1:-1;;;;;3629:50:95;;;;;;;;;;3464:222::o;1732:92:93:-;1523:66;1770:7;1796:21;:14;:21;;;;-1:-1:-1;;;;;1796:21:93;1732:92;:::o;1083:93:158:-;1126:7;1152:17;-1:-1:-1;;;;;;;;;;;1152:7:158;:17::i;:::-;1145:24;;1083:93;:::o;2876:120:95:-;563:66;2927:7;2953:36;:14;:36;;;;-1:-1:-1;;;;;2953:36:95;2876:120;:::o;2302:432::-;2401:44;;;22:32:-1;6:49;;2401:44:95;;;;;;49:4:-1;25:18;;61:17;;2401:44:95;182:15:-1;2424:20:95;179:29:-1;160:49;;2354:11:95;;;2476:20;:18;:20::i;:::-;2455:41;;2615:1;2612;2601:8;2595:15;2588:4;2578:8;2574:19;2569:3;2557:10;2552:3;2543:74;2662:6;2657:2;2641:14;2638:22;2634:35;2631:2;;;2702:1;2696:8;2688:16;;2631:2;2515:213;;;;:::o;1992:100:93:-;783:7;:5;:7::i;:::-;-1:-1:-1;;;;;769:21:93;:10;:21;761:30;;;;;;2066:19;2076:8;2066:9;:19::i;978:99:158:-;1024:7;1050:20;-1:-1:-1;;;;;;;;;;;1050:7:158;:20::i;3991:269:95:-;4103:13;4083:8;-1:-1:-1;;;;;;;;;;;481:20:84;;;:47;;-1:-1:-1;;;;;;;;;;;;505:23:84;;481:47;473:56;;;;;;;;-1:-1:-1;;;;;;;;;;;4119:20:95;;:53;;4157:15;4119:53;;;4142:12;4119:53;4215:36;;;;;;;;;;;;26:21:-1;;;22:32;;;6:49;;4215:36:95;;;;;;;25:18:-1;;61:17;;4215:36:95;182:15:-1;-1:-1;;4215:36:95;;179:29:-1;160:49;;4190:62:95;;;;4103:69;;-1:-1:-1;;;;;;4190:24:95;;;4215:36;;4190:62;;;;25:18:-1;4190:62:95;;25:18:-1;-1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;4190:62:95;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4182:71;;;;;;;;3991:269;;;;;:::o;438:578:159:-;496:4;971:18;;1003:8;;438:578::o;1632:527:95:-;1713:11;;;1866:21;1694:8;-1:-1:-1;;;;;;;;;;;481:20:84;;;:47;;-1:-1:-1;;;;;;;;;;;;505:23:84;;481:47;473:56;;;;;;;;1757:20:95;:18;:20::i;:::-;1736:41;-1:-1:-1;;;;;;;;;;;;1803:20:95;;:53;;1841:15;1803:53;;;1826:12;1803:53;1890:30;;;22:32:-1;6:49;;1890:30:95;;;;;;49:4:-1;25:18;;;61:17;;1890:30:95;182:15:-1;-1:-1;;1890:30:95;;179:29:-1;160:49;;2020:15:95;;1787:69;;-1:-1:-1;1890:30:95;;-1:-1:-1;49:4;26:21;;;1982:10:95;1977:3;1968:75;2088:6;2083:2;2067:14;2064:22;2060:35;2057:2;;;2127:1;2121:8;2114:15;;2057:2;1940:213;1632:527;;;;;;;:::o;2149:190:93:-;-1:-1:-1;;;;;2213:22:93;;;;2205:31;;;;;;2251:39;2272:7;:5;:7::i;:::-;2251:39;;;-1:-1:-1;;;;;2251:39:93;;;;;;;;;;;;;;;;;;;;;1523:66;2300:21;;:14;:21;;;:32;;-1:-1:-1;;2300:32:93;-1:-1:-1;;;;;2300:32:93;;;;;;;;;;2149:190::o",
+  "source": "pragma solidity 0.4.24;\n\nimport \"../RewardableBridge.sol\";\n\ncontract RewardableHomeBridgeNativeToErc is RewardableBridge {\n    /**\n     * @dev Updates the fee percentage for home->foreign bridge operations.\n     * Only owner is allowed to call this method.\n     * If during this operation, home fee is changed, it is highly recommended to stop the bridge operations first.\n     * Otherwise, pending signature requests can become a reason for imbalance between two bridge sides.\n     * @param _fee new value for fee percentage.\n     */\n    function setHomeFee(uint256 _fee) external onlyOwner {\n        _setFee(feeManagerContract(), _fee, HOME_FEE);\n    }\n\n    /**\n     * @dev Updates the fee percentage for foreign->home bridge operations.\n     * Only owner is allowed to call this method.\n     * @param _fee new value for fee percentage.\n     */\n    function setForeignFee(uint256 _fee) external onlyOwner {\n        _setFee(feeManagerContract(), _fee, FOREIGN_FEE);\n    }\n\n    function getForeignFee() public view returns (uint256) {\n        return _getFee(FOREIGN_FEE);\n    }\n\n    function getHomeFee() public view returns (uint256) {\n        return _getFee(HOME_FEE);\n    }\n}\n",
+  "sourcePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/native_to_erc20/RewardableHomeBridgeNativeToErc.sol",
+  "ast": {
+    "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/native_to_erc20/RewardableHomeBridgeNativeToErc.sol",
+    "exportedSymbols": {
+      "RewardableHomeBridgeNativeToErc": [
+        29870
+      ]
+    },
+    "id": 29871,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 29816,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:158"
+      },
+      {
+        "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/RewardableBridge.sol",
+        "file": "../RewardableBridge.sol",
+        "id": 29817,
+        "nodeType": "ImportDirective",
+        "scope": 29871,
+        "sourceUnit": 15608,
+        "src": "25:33:158",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 29818,
+              "name": "RewardableBridge",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 15607,
+              "src": "104:16:158",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_RewardableBridge_$15607",
+                "typeString": "contract RewardableBridge"
+              }
+            },
+            "id": 29819,
+            "nodeType": "InheritanceSpecifier",
+            "src": "104:16:158"
+          }
+        ],
+        "contractDependencies": [
+          9266,
+          14382,
+          15318,
+          15607
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 29870,
+        "linearizedBaseContracts": [
+          29870,
+          15607,
+          14382,
+          15318,
+          9266
+        ],
+        "name": "RewardableHomeBridgeNativeToErc",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 29833,
+              "nodeType": "Block",
+              "src": "592:62:158",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 29827,
+                          "name": "feeManagerContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 15459,
+                          "src": "610:18:158",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                            "typeString": "function () view returns (address)"
+                          }
+                        },
+                        "id": 29828,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "610:20:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 29829,
+                        "name": "_fee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 29821,
+                        "src": "632:4:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 29830,
+                        "name": "HOME_FEE",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14362,
+                        "src": "638:8:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 29826,
+                      "name": "_setFee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15519,
+                      "src": "602:7:158",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$_t_bytes32_$returns$__$",
+                        "typeString": "function (address,uint256,bytes32)"
+                      }
+                    },
+                    "id": 29831,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "602:45:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 29832,
+                  "nodeType": "ExpressionStatement",
+                  "src": "602:45:158"
+                }
+              ]
+            },
+            "documentation": "@dev Updates the fee percentage for home->foreign bridge operations.\nOnly owner is allowed to call this method.\nIf during this operation, home fee is changed, it is highly recommended to stop the bridge operations first.\nOtherwise, pending signature requests can become a reason for imbalance between two bridge sides.\n@param _fee new value for fee percentage.",
+            "id": 29834,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 29824,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 29823,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15233,
+                  "src": "582:9:158",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "582:9:158"
+              }
+            ],
+            "name": "setHomeFee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 29822,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29821,
+                  "name": "_fee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29834,
+                  "src": "559:12:158",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 29820,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "559:7:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "558:14:158"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 29825,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "592:0:158"
+            },
+            "scope": 29870,
+            "src": "539:115:158",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 29848,
+              "nodeType": "Block",
+              "src": "907:65:158",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 29842,
+                          "name": "feeManagerContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 15459,
+                          "src": "925:18:158",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                            "typeString": "function () view returns (address)"
+                          }
+                        },
+                        "id": 29843,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "925:20:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 29844,
+                        "name": "_fee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 29836,
+                        "src": "947:4:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 29845,
+                        "name": "FOREIGN_FEE",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14365,
+                        "src": "953:11:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 29841,
+                      "name": "_setFee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15519,
+                      "src": "917:7:158",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$_t_bytes32_$returns$__$",
+                        "typeString": "function (address,uint256,bytes32)"
+                      }
+                    },
+                    "id": 29846,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "917:48:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 29847,
+                  "nodeType": "ExpressionStatement",
+                  "src": "917:48:158"
+                }
+              ]
+            },
+            "documentation": "@dev Updates the fee percentage for foreign->home bridge operations.\nOnly owner is allowed to call this method.\n@param _fee new value for fee percentage.",
+            "id": 29849,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 29839,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 29838,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15233,
+                  "src": "897:9:158",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "897:9:158"
+              }
+            ],
+            "name": "setForeignFee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 29837,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29836,
+                  "name": "_fee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29849,
+                  "src": "874:12:158",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 29835,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "874:7:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "873:14:158"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 29840,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "907:0:158"
+            },
+            "scope": 29870,
+            "src": "851:121:158",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 29858,
+              "nodeType": "Block",
+              "src": "1033:44:158",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 29855,
+                        "name": "FOREIGN_FEE",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14365,
+                        "src": "1058:11:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 29854,
+                      "name": "_getFee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15430,
+                      "src": "1050:7:158",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_bytes32_$returns$_t_uint256_$",
+                        "typeString": "function (bytes32) view returns (uint256)"
+                      }
+                    },
+                    "id": 29856,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1050:20:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 29853,
+                  "id": 29857,
+                  "nodeType": "Return",
+                  "src": "1043:27:158"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 29859,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getForeignFee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 29850,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1000:2:158"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 29853,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29852,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29859,
+                  "src": "1024:7:158",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 29851,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1024:7:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1023:9:158"
+            },
+            "scope": 29870,
+            "src": "978:99:158",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 29868,
+              "nodeType": "Block",
+              "src": "1135:41:158",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 29865,
+                        "name": "HOME_FEE",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14362,
+                        "src": "1160:8:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 29864,
+                      "name": "_getFee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15430,
+                      "src": "1152:7:158",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_bytes32_$returns$_t_uint256_$",
+                        "typeString": "function (bytes32) view returns (uint256)"
+                      }
+                    },
+                    "id": 29866,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1152:17:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 29863,
+                  "id": 29867,
+                  "nodeType": "Return",
+                  "src": "1145:24:158"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 29869,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getHomeFee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 29860,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1102:2:158"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 29863,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29862,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29869,
+                  "src": "1126:7:158",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 29861,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1126:7:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1125:9:158"
+            },
+            "scope": 29870,
+            "src": "1083:93:158",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 29871,
+        "src": "60:1118:158"
+      }
+    ],
+    "src": "0:1179:158"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/native_to_erc20/RewardableHomeBridgeNativeToErc.sol",
+    "exportedSymbols": {
+      "RewardableHomeBridgeNativeToErc": [
+        29870
+      ]
+    },
+    "id": 29871,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 29816,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:158"
+      },
+      {
+        "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/RewardableBridge.sol",
+        "file": "../RewardableBridge.sol",
+        "id": 29817,
+        "nodeType": "ImportDirective",
+        "scope": 29871,
+        "sourceUnit": 15608,
+        "src": "25:33:158",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 29818,
+              "name": "RewardableBridge",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 15607,
+              "src": "104:16:158",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_RewardableBridge_$15607",
+                "typeString": "contract RewardableBridge"
+              }
+            },
+            "id": 29819,
+            "nodeType": "InheritanceSpecifier",
+            "src": "104:16:158"
+          }
+        ],
+        "contractDependencies": [
+          9266,
+          14382,
+          15318,
+          15607
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 29870,
+        "linearizedBaseContracts": [
+          29870,
+          15607,
+          14382,
+          15318,
+          9266
+        ],
+        "name": "RewardableHomeBridgeNativeToErc",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 29833,
+              "nodeType": "Block",
+              "src": "592:62:158",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 29827,
+                          "name": "feeManagerContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 15459,
+                          "src": "610:18:158",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                            "typeString": "function () view returns (address)"
+                          }
+                        },
+                        "id": 29828,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "610:20:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 29829,
+                        "name": "_fee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 29821,
+                        "src": "632:4:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 29830,
+                        "name": "HOME_FEE",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14362,
+                        "src": "638:8:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 29826,
+                      "name": "_setFee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15519,
+                      "src": "602:7:158",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$_t_bytes32_$returns$__$",
+                        "typeString": "function (address,uint256,bytes32)"
+                      }
+                    },
+                    "id": 29831,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "602:45:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 29832,
+                  "nodeType": "ExpressionStatement",
+                  "src": "602:45:158"
+                }
+              ]
+            },
+            "documentation": "@dev Updates the fee percentage for home->foreign bridge operations.\nOnly owner is allowed to call this method.\nIf during this operation, home fee is changed, it is highly recommended to stop the bridge operations first.\nOtherwise, pending signature requests can become a reason for imbalance between two bridge sides.\n@param _fee new value for fee percentage.",
+            "id": 29834,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 29824,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 29823,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15233,
+                  "src": "582:9:158",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "582:9:158"
+              }
+            ],
+            "name": "setHomeFee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 29822,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29821,
+                  "name": "_fee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29834,
+                  "src": "559:12:158",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 29820,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "559:7:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "558:14:158"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 29825,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "592:0:158"
+            },
+            "scope": 29870,
+            "src": "539:115:158",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 29848,
+              "nodeType": "Block",
+              "src": "907:65:158",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 29842,
+                          "name": "feeManagerContract",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 15459,
+                          "src": "925:18:158",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                            "typeString": "function () view returns (address)"
+                          }
+                        },
+                        "id": 29843,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "925:20:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 29844,
+                        "name": "_fee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 29836,
+                        "src": "947:4:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 29845,
+                        "name": "FOREIGN_FEE",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14365,
+                        "src": "953:11:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 29841,
+                      "name": "_setFee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15519,
+                      "src": "917:7:158",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$_t_bytes32_$returns$__$",
+                        "typeString": "function (address,uint256,bytes32)"
+                      }
+                    },
+                    "id": 29846,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "917:48:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 29847,
+                  "nodeType": "ExpressionStatement",
+                  "src": "917:48:158"
+                }
+              ]
+            },
+            "documentation": "@dev Updates the fee percentage for foreign->home bridge operations.\nOnly owner is allowed to call this method.\n@param _fee new value for fee percentage.",
+            "id": 29849,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 29839,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 29838,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15233,
+                  "src": "897:9:158",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "897:9:158"
+              }
+            ],
+            "name": "setForeignFee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 29837,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29836,
+                  "name": "_fee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29849,
+                  "src": "874:12:158",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 29835,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "874:7:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "873:14:158"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 29840,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "907:0:158"
+            },
+            "scope": 29870,
+            "src": "851:121:158",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 29858,
+              "nodeType": "Block",
+              "src": "1033:44:158",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 29855,
+                        "name": "FOREIGN_FEE",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14365,
+                        "src": "1058:11:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 29854,
+                      "name": "_getFee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15430,
+                      "src": "1050:7:158",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_bytes32_$returns$_t_uint256_$",
+                        "typeString": "function (bytes32) view returns (uint256)"
+                      }
+                    },
+                    "id": 29856,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1050:20:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 29853,
+                  "id": 29857,
+                  "nodeType": "Return",
+                  "src": "1043:27:158"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 29859,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getForeignFee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 29850,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1000:2:158"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 29853,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29852,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29859,
+                  "src": "1024:7:158",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 29851,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1024:7:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1023:9:158"
+            },
+            "scope": 29870,
+            "src": "978:99:158",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 29868,
+              "nodeType": "Block",
+              "src": "1135:41:158",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 29865,
+                        "name": "HOME_FEE",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14362,
+                        "src": "1160:8:158",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 29864,
+                      "name": "_getFee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15430,
+                      "src": "1152:7:158",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_bytes32_$returns$_t_uint256_$",
+                        "typeString": "function (bytes32) view returns (uint256)"
+                      }
+                    },
+                    "id": 29866,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1152:17:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 29863,
+                  "id": 29867,
+                  "nodeType": "Return",
+                  "src": "1145:24:158"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 29869,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getHomeFee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 29860,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1102:2:158"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 29863,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 29862,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29869,
+                  "src": "1126:7:158",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 29861,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1126:7:158",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1125:9:158"
+            },
+            "scope": 29870,
+            "src": "1083:93:158",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 29871,
+        "src": "60:1118:158"
+      }
+    ],
+    "src": "0:1179:158"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-11-26T16:22:40.030Z",
+  "devdoc": {
+    "methods": {
+      "feeManagerContract()": {
+        "details": "Retrieves the address of the fee manager contract used.",
+        "return": "address of the fee manager contract."
+      },
+      "getFeeManagerMode()": {
+        "details": "Retrieves the mode of the used fee manager.",
+        "return": "manager mode identifier, or zero bytes otherwise."
+      },
+      "owner()": {
+        "details": "Tells the address of the owner",
+        "return": "the address of the owner"
+      },
+      "setFeeManagerContract(address)": {
+        "details": "Updates the address of the used fee manager contract. Only contract owner can call this method. If during this operation, home fee is changed, it is highly recommended to stop the bridge operations first. Otherwise, pending signature requests can become a reason for imbalance between two bridge sides.",
+        "params": {
+          "_feeManager": "address of the new fee manager contract, or zero address to disable fee collection."
+        }
+      },
+      "setForeignFee(uint256)": {
+        "details": "Updates the fee percentage for foreign->home bridge operations. Only owner is allowed to call this method.",
+        "params": {
+          "_fee": "new value for fee percentage."
+        }
+      },
+      "setHomeFee(uint256)": {
+        "details": "Updates the fee percentage for home->foreign bridge operations. Only owner is allowed to call this method. If during this operation, home fee is changed, it is highly recommended to stop the bridge operations first. Otherwise, pending signature requests can become a reason for imbalance between two bridge sides.",
+        "params": {
+          "_fee": "new value for fee percentage."
+        }
+      },
+      "transferOwnership(address)": {
+        "details": "Allows the current owner to transfer control of the contract to a newOwner.",
+        "params": {
+          "newOwner": "the address to transfer ownership to."
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

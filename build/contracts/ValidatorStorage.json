@@ -1,0 +1,190 @@
+{
+  "contractName": "ValidatorStorage",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/ValidatorStorage.sol\":\"ValidatorStorage\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/ValidatorStorage.sol\":{\"keccak256\":\"0xace2caccabb9193728e70637b354934711181633e9c9e3cbb73d00a275337974\",\"urls\":[\"bzzr://7af22b5dc84f2ba32bc9a580f1e568d846a5a75edc4a617dbbecd7877ab706ed\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a723058200fcfc6e81f9326a0197055ab03788c707dd8495cea0950ea0f846d4e121d6f9e0029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a723058200fcfc6e81f9326a0197055ab03788c707dd8495cea0950ea0f846d4e121d6f9e0029",
+  "sourceMap": "25:200:104:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:200:104;;;;;;;",
+  "deployedSourceMap": "25:200:104:-;;;;;",
+  "source": "pragma solidity 0.4.24;\n\ncontract ValidatorStorage {\n    bytes32 internal constant VALIDATOR_CONTRACT = 0x5a74bb7e202fb8e4bf311841c7d64ec19df195fee77d7e7ae749b27921b6ddfe; // keccak256(abi.encodePacked(\"validatorContract\"))\n}\n",
+  "sourcePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/ValidatorStorage.sol",
+  "ast": {
+    "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/ValidatorStorage.sol",
+    "exportedSymbols": {
+      "ValidatorStorage": [
+        16461
+      ]
+    },
+    "id": 16462,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 16457,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:104"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 16461,
+        "linearizedBaseContracts": [
+          16461
+        ],
+        "name": "ValidatorStorage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 16460,
+            "name": "VALIDATOR_CONTRACT",
+            "nodeType": "VariableDeclaration",
+            "scope": 16461,
+            "src": "57:113:104",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 16458,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "57:7:104",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "307835613734626237653230326662386534626633313138343163376436346563313964663139356665653737643765376165373439623237393231623664646665",
+              "id": 16459,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "104:66:104",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_40914404658918022556649403538380372276948994691906753693999034884071773101566_by_1",
+                "typeString": "int_const 4091...(69 digits omitted)...1566"
+              },
+              "value": "0x5a74bb7e202fb8e4bf311841c7d64ec19df195fee77d7e7ae749b27921b6ddfe"
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 16462,
+        "src": "25:200:104"
+      }
+    ],
+    "src": "0:226:104"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/ValidatorStorage.sol",
+    "exportedSymbols": {
+      "ValidatorStorage": [
+        16461
+      ]
+    },
+    "id": 16462,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 16457,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:104"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 16461,
+        "linearizedBaseContracts": [
+          16461
+        ],
+        "name": "ValidatorStorage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 16460,
+            "name": "VALIDATOR_CONTRACT",
+            "nodeType": "VariableDeclaration",
+            "scope": 16461,
+            "src": "57:113:104",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 16458,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "57:7:104",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "307835613734626237653230326662386534626633313138343163376436346563313964663139356665653737643765376165373439623237393231623664646665",
+              "id": 16459,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "104:66:104",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_40914404658918022556649403538380372276948994691906753693999034884071773101566_by_1",
+                "typeString": "int_const 4091...(69 digits omitted)...1566"
+              },
+              "value": "0x5a74bb7e202fb8e4bf311841c7d64ec19df195fee77d7e7ae749b27921b6ddfe"
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 16462,
+        "src": "25:200:104"
+      }
+    ],
+    "src": "0:226:104"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-11-26T16:22:39.868Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

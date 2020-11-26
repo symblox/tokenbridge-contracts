@@ -1,0 +1,190 @@
+{
+  "contractName": "ERC677Storage",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/ERC677Storage.sol\":\"ERC677Storage\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/ERC677Storage.sol\":{\"keccak256\":\"0x4c7b3459083f9d776c523846d2ca45a1066c5295b16acba13877f600797f625f\",\"urls\":[\"bzzr://4b738fb49963baf92c55d2a15a9fdb90a731c3a549ec2f331aef1e7e1cdf5317\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a7230582017ebc30078ff70d85fc96f7078d6b56fc8c479fed7371f86bcd0e9b2ae6f5a1b0029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a7230582017ebc30078ff70d85fc96f7078d6b56fc8c479fed7371f86bcd0e9b2ae6f5a1b0029",
+  "sourceMap": "25:185:83:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:185:83;;;;;;;",
+  "deployedSourceMap": "25:185:83:-;;;;;",
+  "source": "pragma solidity 0.4.24;\n\ncontract ERC677Storage {\n    bytes32 internal constant ERC677_TOKEN = 0xa8b0ade3e2b734f043ce298aca4cc8d19d74270223f34531d0988b7d00cba21d; // keccak256(abi.encodePacked(\"erc677token\"))\n}\n",
+  "sourcePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/ERC677Storage.sol",
+  "ast": {
+    "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/ERC677Storage.sol",
+    "exportedSymbols": {
+      "ERC677Storage": [
+        14357
+      ]
+    },
+    "id": 14358,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14353,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:83"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14357,
+        "linearizedBaseContracts": [
+          14357
+        ],
+        "name": "ERC677Storage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 14356,
+            "name": "ERC677_TOKEN",
+            "nodeType": "VariableDeclaration",
+            "scope": 14357,
+            "src": "54:107:83",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 14354,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "54:7:83",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "307861386230616465336532623733346630343363653239386163613463633864313964373432373032323366333435333164303938386237643030636261323164",
+              "id": 14355,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "95:66:83",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_76300723791291581918992247847374788503743422111930122744240979336663778697757_by_1",
+                "typeString": "int_const 7630...(69 digits omitted)...7757"
+              },
+              "value": "0xa8b0ade3e2b734f043ce298aca4cc8d19d74270223f34531d0988b7d00cba21d"
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 14358,
+        "src": "25:185:83"
+      }
+    ],
+    "src": "0:211:83"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/ERC677Storage.sol",
+    "exportedSymbols": {
+      "ERC677Storage": [
+        14357
+      ]
+    },
+    "id": 14358,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14353,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:83"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14357,
+        "linearizedBaseContracts": [
+          14357
+        ],
+        "name": "ERC677Storage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 14356,
+            "name": "ERC677_TOKEN",
+            "nodeType": "VariableDeclaration",
+            "scope": 14357,
+            "src": "54:107:83",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 14354,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "54:7:83",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "307861386230616465336532623733346630343363653239386163613463633864313964373432373032323366333435333164303938386237643030636261323164",
+              "id": 14355,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "95:66:83",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_76300723791291581918992247847374788503743422111930122744240979336663778697757_by_1",
+                "typeString": "int_const 7630...(69 digits omitted)...7757"
+              },
+              "value": "0xa8b0ade3e2b734f043ce298aca4cc8d19d74270223f34531d0988b7d00cba21d"
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 14358,
+        "src": "25:185:83"
+      }
+    ],
+    "src": "0:211:83"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-11-26T16:22:39.841Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

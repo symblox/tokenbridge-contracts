@@ -1,0 +1,757 @@
+{
+  "contractName": "VersionableAMB",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getBridgeMode",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getBridgeInterfacesVersion",
+      "outputs": [
+        {
+          "name": "major",
+          "type": "uint64"
+        },
+        {
+          "name": "minor",
+          "type": "uint64"
+        },
+        {
+          "name": "patch",
+          "type": "uint64"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "metadata": "",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.4.24;\n\nimport \"../VersionableBridge.sol\";\n\ncontract VersionableAMB is VersionableBridge {\n    // message format version as a single 4-bytes number padded to 32-bytes\n    // value, included into every outgoing relay request\n    //\n    // the message version should be updated every time when\n    // - new field appears\n    // - some field removed\n    // - fields order is changed\n    bytes32 internal constant MESSAGE_PACKING_VERSION = 0x00050000 << 224;\n\n    /**\n     * Returns currently used bridge version\n     * @return (major, minor, patch) version triple\n     */\n    function getBridgeInterfacesVersion() external pure returns (uint64 major, uint64 minor, uint64 patch) {\n        return (5, 4, 0);\n    }\n}\n",
+  "sourcePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/arbitrary_message/VersionableAMB.sol",
+  "ast": {
+    "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/arbitrary_message/VersionableAMB.sol",
+    "exportedSymbols": {
+      "VersionableAMB": [
+        22990
+      ]
+    },
+    "id": 22991,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 22966,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:132"
+      },
+      {
+        "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/VersionableBridge.sol",
+        "file": "../VersionableBridge.sol",
+        "id": 22967,
+        "nodeType": "ImportDirective",
+        "scope": 22991,
+        "sourceUnit": 16713,
+        "src": "25:34:132",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 22968,
+              "name": "VersionableBridge",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 16712,
+              "src": "88:17:132",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_VersionableBridge_$16712",
+                "typeString": "contract VersionableBridge"
+              }
+            },
+            "id": 22969,
+            "nodeType": "InheritanceSpecifier",
+            "src": "88:17:132"
+          }
+        ],
+        "contractDependencies": [
+          16712
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 22990,
+        "linearizedBaseContracts": [
+          22990,
+          16712
+        ],
+        "name": "VersionableAMB",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 22974,
+            "name": "MESSAGE_PACKING_VERSION",
+            "nodeType": "VariableDeclaration",
+            "scope": 22990,
+            "src": "401:69:132",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 22970,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "401:7:132",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "commonType": {
+                "typeIdentifier": "t_rational_8834235323891921647916487503714592579137419484378094790608031006463098880_by_1",
+                "typeString": "int_const 8834...(65 digits omitted)...8880"
+              },
+              "id": 22973,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "argumentTypes": null,
+                "hexValue": "30783030303530303030",
+                "id": 22971,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "453:10:132",
+                "subdenomination": null,
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_327680_by_1",
+                  "typeString": "int_const 327680"
+                },
+                "value": "0x00050000"
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "<<",
+              "rightExpression": {
+                "argumentTypes": null,
+                "hexValue": "323234",
+                "id": 22972,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "467:3:132",
+                "subdenomination": null,
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_224_by_1",
+                  "typeString": "int_const 224"
+                },
+                "value": "224"
+              },
+              "src": "453:17:132",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_8834235323891921647916487503714592579137419484378094790608031006463098880_by_1",
+                "typeString": "int_const 8834...(65 digits omitted)...8880"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 22988,
+              "nodeType": "Block",
+              "src": "693:33:132",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "35",
+                        "id": 22983,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "711:1:132",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_5_by_1",
+                          "typeString": "int_const 5"
+                        },
+                        "value": "5"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "34",
+                        "id": 22984,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "714:1:132",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_4_by_1",
+                          "typeString": "int_const 4"
+                        },
+                        "value": "4"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "30",
+                        "id": 22985,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "717:1:132",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      }
+                    ],
+                    "id": 22986,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "710:9:132",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_rational_5_by_1_$_t_rational_4_by_1_$_t_rational_0_by_1_$",
+                      "typeString": "tuple(int_const 5,int_const 4,int_const 0)"
+                    }
+                  },
+                  "functionReturnParameters": 22982,
+                  "id": 22987,
+                  "nodeType": "Return",
+                  "src": "703:16:132"
+                }
+              ]
+            },
+            "documentation": "Returns currently used bridge version\n@return (major, minor, patch) version triple",
+            "id": 22989,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getBridgeInterfacesVersion",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 22975,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "625:2:132"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 22982,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 22977,
+                  "name": "major",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22989,
+                  "src": "651:12:132",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 22976,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "651:6:132",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 22979,
+                  "name": "minor",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22989,
+                  "src": "665:12:132",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 22978,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "665:6:132",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 22981,
+                  "name": "patch",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22989,
+                  "src": "679:12:132",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 22980,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "679:6:132",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "650:42:132"
+            },
+            "scope": 22990,
+            "src": "590:136:132",
+            "stateMutability": "pure",
+            "superFunction": 16706,
+            "visibility": "external"
+          }
+        ],
+        "scope": 22991,
+        "src": "61:667:132"
+      }
+    ],
+    "src": "0:729:132"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/arbitrary_message/VersionableAMB.sol",
+    "exportedSymbols": {
+      "VersionableAMB": [
+        22990
+      ]
+    },
+    "id": 22991,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 22966,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:132"
+      },
+      {
+        "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/VersionableBridge.sol",
+        "file": "../VersionableBridge.sol",
+        "id": 22967,
+        "nodeType": "ImportDirective",
+        "scope": 22991,
+        "sourceUnit": 16713,
+        "src": "25:34:132",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 22968,
+              "name": "VersionableBridge",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 16712,
+              "src": "88:17:132",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_VersionableBridge_$16712",
+                "typeString": "contract VersionableBridge"
+              }
+            },
+            "id": 22969,
+            "nodeType": "InheritanceSpecifier",
+            "src": "88:17:132"
+          }
+        ],
+        "contractDependencies": [
+          16712
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 22990,
+        "linearizedBaseContracts": [
+          22990,
+          16712
+        ],
+        "name": "VersionableAMB",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 22974,
+            "name": "MESSAGE_PACKING_VERSION",
+            "nodeType": "VariableDeclaration",
+            "scope": 22990,
+            "src": "401:69:132",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 22970,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "401:7:132",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "commonType": {
+                "typeIdentifier": "t_rational_8834235323891921647916487503714592579137419484378094790608031006463098880_by_1",
+                "typeString": "int_const 8834...(65 digits omitted)...8880"
+              },
+              "id": 22973,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "argumentTypes": null,
+                "hexValue": "30783030303530303030",
+                "id": 22971,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "453:10:132",
+                "subdenomination": null,
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_327680_by_1",
+                  "typeString": "int_const 327680"
+                },
+                "value": "0x00050000"
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "<<",
+              "rightExpression": {
+                "argumentTypes": null,
+                "hexValue": "323234",
+                "id": 22972,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "467:3:132",
+                "subdenomination": null,
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_224_by_1",
+                  "typeString": "int_const 224"
+                },
+                "value": "224"
+              },
+              "src": "453:17:132",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_8834235323891921647916487503714592579137419484378094790608031006463098880_by_1",
+                "typeString": "int_const 8834...(65 digits omitted)...8880"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 22988,
+              "nodeType": "Block",
+              "src": "693:33:132",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "35",
+                        "id": 22983,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "711:1:132",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_5_by_1",
+                          "typeString": "int_const 5"
+                        },
+                        "value": "5"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "34",
+                        "id": 22984,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "714:1:132",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_4_by_1",
+                          "typeString": "int_const 4"
+                        },
+                        "value": "4"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "30",
+                        "id": 22985,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "717:1:132",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      }
+                    ],
+                    "id": 22986,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "710:9:132",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_rational_5_by_1_$_t_rational_4_by_1_$_t_rational_0_by_1_$",
+                      "typeString": "tuple(int_const 5,int_const 4,int_const 0)"
+                    }
+                  },
+                  "functionReturnParameters": 22982,
+                  "id": 22987,
+                  "nodeType": "Return",
+                  "src": "703:16:132"
+                }
+              ]
+            },
+            "documentation": "Returns currently used bridge version\n@return (major, minor, patch) version triple",
+            "id": 22989,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getBridgeInterfacesVersion",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 22975,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "625:2:132"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 22982,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 22977,
+                  "name": "major",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22989,
+                  "src": "651:12:132",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 22976,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "651:6:132",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 22979,
+                  "name": "minor",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22989,
+                  "src": "665:12:132",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 22978,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "665:6:132",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 22981,
+                  "name": "patch",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 22989,
+                  "src": "679:12:132",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 22980,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "679:6:132",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "650:42:132"
+            },
+            "scope": 22990,
+            "src": "590:136:132",
+            "stateMutability": "pure",
+            "superFunction": 16706,
+            "visibility": "external"
+          }
+        ],
+        "scope": 22991,
+        "src": "61:667:132"
+      }
+    ],
+    "src": "0:729:132"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-11-26T16:22:39.943Z",
+  "devdoc": {
+    "methods": {
+      "getBridgeInterfacesVersion()": {
+        "return": "(major, minor, patch) version triple"
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "getBridgeInterfacesVersion()": {
+        "notice": "Returns currently used bridge version"
+      }
+    }
+  }
+}

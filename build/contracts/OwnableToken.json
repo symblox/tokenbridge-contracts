@@ -1,0 +1,1427 @@
+{
+  "contractName": "OwnableToken",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.4.24;\n\nimport \"../upgradeable_contracts/native_to_erc20/ForeignBridgeNativeToErc.sol\";\n\ninterface OwnableToken {\n    function transferOwnership(address) external;\n}\n\ncontract ForeignBridgeV2 is ForeignBridgeNativeToErc {\n    function changeTokenOwnership(address _newTokenOwner) public onlyOwner {\n        address token = address(erc677token());\n        OwnableToken poa = OwnableToken(token);\n        poa.transferOwnership(_newTokenOwner);\n    }\n    // used for testing\n    address public something;\n    function doSomething(address _newTokenOwner) public onlyOwner {\n        something = _newTokenOwner;\n    }\n}\n",
+  "sourcePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/mocks/ForeignBridgeV2.sol",
+  "ast": {
+    "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/mocks/ForeignBridgeV2.sol",
+    "exportedSymbols": {
+      "ForeignBridgeV2": [
+        5725
+      ],
+      "OwnableToken": [
+        5681
+      ]
+    },
+    "id": 5726,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5674,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:41"
+      },
+      {
+        "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/native_to_erc20/ForeignBridgeNativeToErc.sol",
+        "file": "../upgradeable_contracts/native_to_erc20/ForeignBridgeNativeToErc.sol",
+        "id": 5675,
+        "nodeType": "ImportDirective",
+        "scope": 5726,
+        "sourceUnit": 29286,
+        "src": "25:79:41",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5681,
+        "linearizedBaseContracts": [
+          5681
+        ],
+        "name": "OwnableToken",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5680,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "transferOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5678,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5677,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5680,
+                  "src": "162:7:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5676,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "162:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "161:9:41"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5679,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "179:0:41"
+            },
+            "scope": 5681,
+            "src": "135:45:41",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5726,
+        "src": "106:76:41"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5682,
+              "name": "ForeignBridgeNativeToErc",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 29285,
+              "src": "212:24:41",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ForeignBridgeNativeToErc_$29285",
+                "typeString": "contract ForeignBridgeNativeToErc"
+              }
+            },
+            "id": 5683,
+            "nodeType": "InheritanceSpecifier",
+            "src": "212:24:41"
+          }
+        ],
+        "contractDependencies": [
+          1500,
+          9266,
+          10090,
+          11589,
+          11749,
+          12916,
+          13954,
+          14052,
+          14172,
+          14317,
+          14351,
+          14357,
+          14382,
+          14798,
+          14817,
+          15167,
+          15206,
+          15318,
+          15607,
+          16409,
+          16455,
+          16461,
+          16712,
+          29285,
+          29814
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5725,
+        "linearizedBaseContracts": [
+          5725,
+          29285,
+          29814,
+          15607,
+          14382,
+          14351,
+          14317,
+          15206,
+          10090,
+          13954,
+          14357,
+          1500,
+          11749,
+          15167,
+          12916,
+          11589,
+          14172,
+          16712,
+          14052,
+          16409,
+          15318,
+          16455,
+          16461,
+          14817,
+          14798,
+          9266
+        ],
+        "name": "ForeignBridgeV2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 5709,
+              "nodeType": "Block",
+              "src": "314:150:41",
+              "statements": [
+                {
+                  "assignments": [
+                    5691
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 5691,
+                      "name": "token",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 5710,
+                      "src": "324:13:41",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 5690,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "324:7:41",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 5696,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 5693,
+                          "name": "erc677token",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14289,
+                          "src": "348:11:41",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_contract$_ERC677_$1469_$",
+                            "typeString": "function () view returns (contract ERC677)"
+                          }
+                        },
+                        "id": 5694,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "348:13:41",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC677_$1469",
+                          "typeString": "contract ERC677"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_ERC677_$1469",
+                          "typeString": "contract ERC677"
+                        }
+                      ],
+                      "id": 5692,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "340:7:41",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 5695,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "340:22:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "324:38:41"
+                },
+                {
+                  "assignments": [
+                    5698
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 5698,
+                      "name": "poa",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 5710,
+                      "src": "372:16:41",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_OwnableToken_$5681",
+                        "typeString": "contract OwnableToken"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 5697,
+                        "name": "OwnableToken",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 5681,
+                        "src": "372:12:41",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableToken_$5681",
+                          "typeString": "contract OwnableToken"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 5702,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 5700,
+                        "name": "token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5691,
+                        "src": "404:5:41",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 5699,
+                      "name": "OwnableToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5681,
+                      "src": "391:12:41",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_OwnableToken_$5681_$",
+                        "typeString": "type(contract OwnableToken)"
+                      }
+                    },
+                    "id": 5701,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "391:19:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OwnableToken_$5681",
+                      "typeString": "contract OwnableToken"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "372:38:41"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 5706,
+                        "name": "_newTokenOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5685,
+                        "src": "442:14:41",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 5703,
+                        "name": "poa",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5698,
+                        "src": "420:3:41",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableToken_$5681",
+                          "typeString": "contract OwnableToken"
+                        }
+                      },
+                      "id": 5705,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5680,
+                      "src": "420:21:41",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 5707,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "420:37:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5708,
+                  "nodeType": "ExpressionStatement",
+                  "src": "420:37:41"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 5710,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 5688,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 5687,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15233,
+                  "src": "304:9:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "304:9:41"
+              }
+            ],
+            "name": "changeTokenOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5686,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5685,
+                  "name": "_newTokenOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5710,
+                  "src": "273:22:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5684,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "273:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "272:24:41"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5689,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "314:0:41"
+            },
+            "scope": 5725,
+            "src": "243:221:41",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 5712,
+            "name": "something",
+            "nodeType": "VariableDeclaration",
+            "scope": 5725,
+            "src": "493:24:41",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 5711,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "493:7:41",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5723,
+              "nodeType": "Block",
+              "src": "585:43:41",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 5721,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 5719,
+                      "name": "something",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5712,
+                      "src": "595:9:41",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 5720,
+                      "name": "_newTokenOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5714,
+                      "src": "607:14:41",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "595:26:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 5722,
+                  "nodeType": "ExpressionStatement",
+                  "src": "595:26:41"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 5724,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 5717,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 5716,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15233,
+                  "src": "575:9:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "575:9:41"
+              }
+            ],
+            "name": "doSomething",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5715,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5714,
+                  "name": "_newTokenOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5724,
+                  "src": "544:22:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5713,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "544:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "543:24:41"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5718,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "585:0:41"
+            },
+            "scope": 5725,
+            "src": "523:105:41",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5726,
+        "src": "184:446:41"
+      }
+    ],
+    "src": "0:631:41"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/mocks/ForeignBridgeV2.sol",
+    "exportedSymbols": {
+      "ForeignBridgeV2": [
+        5725
+      ],
+      "OwnableToken": [
+        5681
+      ]
+    },
+    "id": 5726,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5674,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:41"
+      },
+      {
+        "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/upgradeable_contracts/native_to_erc20/ForeignBridgeNativeToErc.sol",
+        "file": "../upgradeable_contracts/native_to_erc20/ForeignBridgeNativeToErc.sol",
+        "id": 5675,
+        "nodeType": "ImportDirective",
+        "scope": 5726,
+        "sourceUnit": 29286,
+        "src": "25:79:41",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5681,
+        "linearizedBaseContracts": [
+          5681
+        ],
+        "name": "OwnableToken",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 5680,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "transferOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5678,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5677,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5680,
+                  "src": "162:7:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5676,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "162:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "161:9:41"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5679,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "179:0:41"
+            },
+            "scope": 5681,
+            "src": "135:45:41",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5726,
+        "src": "106:76:41"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5682,
+              "name": "ForeignBridgeNativeToErc",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 29285,
+              "src": "212:24:41",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ForeignBridgeNativeToErc_$29285",
+                "typeString": "contract ForeignBridgeNativeToErc"
+              }
+            },
+            "id": 5683,
+            "nodeType": "InheritanceSpecifier",
+            "src": "212:24:41"
+          }
+        ],
+        "contractDependencies": [
+          1500,
+          9266,
+          10090,
+          11589,
+          11749,
+          12916,
+          13954,
+          14052,
+          14172,
+          14317,
+          14351,
+          14357,
+          14382,
+          14798,
+          14817,
+          15167,
+          15206,
+          15318,
+          15607,
+          16409,
+          16455,
+          16461,
+          16712,
+          29285,
+          29814
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5725,
+        "linearizedBaseContracts": [
+          5725,
+          29285,
+          29814,
+          15607,
+          14382,
+          14351,
+          14317,
+          15206,
+          10090,
+          13954,
+          14357,
+          1500,
+          11749,
+          15167,
+          12916,
+          11589,
+          14172,
+          16712,
+          14052,
+          16409,
+          15318,
+          16455,
+          16461,
+          14817,
+          14798,
+          9266
+        ],
+        "name": "ForeignBridgeV2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 5709,
+              "nodeType": "Block",
+              "src": "314:150:41",
+              "statements": [
+                {
+                  "assignments": [
+                    5691
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 5691,
+                      "name": "token",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 5710,
+                      "src": "324:13:41",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 5690,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "324:7:41",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 5696,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 5693,
+                          "name": "erc677token",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14289,
+                          "src": "348:11:41",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_contract$_ERC677_$1469_$",
+                            "typeString": "function () view returns (contract ERC677)"
+                          }
+                        },
+                        "id": 5694,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "348:13:41",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC677_$1469",
+                          "typeString": "contract ERC677"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_ERC677_$1469",
+                          "typeString": "contract ERC677"
+                        }
+                      ],
+                      "id": 5692,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "340:7:41",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 5695,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "340:22:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "324:38:41"
+                },
+                {
+                  "assignments": [
+                    5698
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 5698,
+                      "name": "poa",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 5710,
+                      "src": "372:16:41",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_OwnableToken_$5681",
+                        "typeString": "contract OwnableToken"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 5697,
+                        "name": "OwnableToken",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 5681,
+                        "src": "372:12:41",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableToken_$5681",
+                          "typeString": "contract OwnableToken"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 5702,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 5700,
+                        "name": "token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5691,
+                        "src": "404:5:41",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 5699,
+                      "name": "OwnableToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5681,
+                      "src": "391:12:41",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_OwnableToken_$5681_$",
+                        "typeString": "type(contract OwnableToken)"
+                      }
+                    },
+                    "id": 5701,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "391:19:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_OwnableToken_$5681",
+                      "typeString": "contract OwnableToken"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "372:38:41"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 5706,
+                        "name": "_newTokenOwner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5685,
+                        "src": "442:14:41",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 5703,
+                        "name": "poa",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5698,
+                        "src": "420:3:41",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_OwnableToken_$5681",
+                          "typeString": "contract OwnableToken"
+                        }
+                      },
+                      "id": 5705,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5680,
+                      "src": "420:21:41",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 5707,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "420:37:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5708,
+                  "nodeType": "ExpressionStatement",
+                  "src": "420:37:41"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 5710,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 5688,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 5687,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15233,
+                  "src": "304:9:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "304:9:41"
+              }
+            ],
+            "name": "changeTokenOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5686,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5685,
+                  "name": "_newTokenOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5710,
+                  "src": "273:22:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5684,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "273:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "272:24:41"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5689,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "314:0:41"
+            },
+            "scope": 5725,
+            "src": "243:221:41",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 5712,
+            "name": "something",
+            "nodeType": "VariableDeclaration",
+            "scope": 5725,
+            "src": "493:24:41",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 5711,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "493:7:41",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5723,
+              "nodeType": "Block",
+              "src": "585:43:41",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 5721,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 5719,
+                      "name": "something",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5712,
+                      "src": "595:9:41",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 5720,
+                      "name": "_newTokenOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5714,
+                      "src": "607:14:41",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "595:26:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 5722,
+                  "nodeType": "ExpressionStatement",
+                  "src": "595:26:41"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 5724,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 5717,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 5716,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15233,
+                  "src": "575:9:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "575:9:41"
+              }
+            ],
+            "name": "doSomething",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5715,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5714,
+                  "name": "_newTokenOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5724,
+                  "src": "544:22:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5713,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "544:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "543:24:41"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 5718,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "585:0:41"
+            },
+            "scope": 5725,
+            "src": "523:105:41",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5726,
+        "src": "184:446:41"
+      }
+    ],
+    "src": "0:631:41"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-11-26T16:22:39.675Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

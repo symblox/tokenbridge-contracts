@@ -1,0 +1,291 @@
+{
+  "contractName": "OldBlockReward",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "bridgesAllowedLength",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"bridgesAllowedLength\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/mocks/OldBlockReward.sol\":\"OldBlockReward\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/mocks/OldBlockReward.sol\":{\"keccak256\":\"0x430888ca1de71f593b5e8437e37a6b988c6be4a78a78c504ff9334577df19421\",\"urls\":[\"bzzr://f1a486c625d7ff9894452736dead356b4c0fa2d5cd5d76e94c43d086add006a1\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b5060988061001e6000396000f300608060405260043610603e5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166310f2ee7c81146043575b600080fd5b348015604e57600080fd5b5060556067565b60408051918252519081900360200190f35b6003905600a165627a7a72305820167b5c4758bedc40e02ab72f768c73153f7abed391a231e147d2a98d291d98580029",
+  "deployedBytecode": "0x608060405260043610603e5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166310f2ee7c81146043575b600080fd5b348015604e57600080fd5b5060556067565b60408051918252519081900360200190f35b6003905600a165627a7a72305820167b5c4758bedc40e02ab72f768c73153f7abed391a231e147d2a98d291d98580029",
+  "sourceMap": "25:121:47:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:121:47;;;;;;;",
+  "deployedSourceMap": "25:121:47:-;;;;;;;;;;;;;;;;;;;;;;;55:89;;8:9:-1;5:2;;;30:1;27;20:12;5:2;55:89:47;;;;;;;;;;;;;;;;;;;;;136:1;55:89;:::o",
+  "source": "pragma solidity 0.4.24;\n\ncontract OldBlockReward {\n    function bridgesAllowedLength() external view returns (uint256) {\n        return 3;\n    }\n}\n",
+  "sourcePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/mocks/OldBlockReward.sol",
+  "ast": {
+    "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/mocks/OldBlockReward.sol",
+    "exportedSymbols": {
+      "OldBlockReward": [
+        6808
+      ]
+    },
+    "id": 6809,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6799,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:47"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6808,
+        "linearizedBaseContracts": [
+          6808
+        ],
+        "name": "OldBlockReward",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 6806,
+              "nodeType": "Block",
+              "src": "119:25:47",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "33",
+                    "id": 6804,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "136:1:47",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_3_by_1",
+                      "typeString": "int_const 3"
+                    },
+                    "value": "3"
+                  },
+                  "functionReturnParameters": 6803,
+                  "id": 6805,
+                  "nodeType": "Return",
+                  "src": "129:8:47"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6807,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "bridgesAllowedLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6800,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "84:2:47"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6803,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6802,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6807,
+                  "src": "110:7:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6801,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "110:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "109:9:47"
+            },
+            "scope": 6808,
+            "src": "55:89:47",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6809,
+        "src": "25:121:47"
+      }
+    ],
+    "src": "0:147:47"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/max/Projects/Symblox/TokenBridge/tokenbridge/contracts/contracts/mocks/OldBlockReward.sol",
+    "exportedSymbols": {
+      "OldBlockReward": [
+        6808
+      ]
+    },
+    "id": 6809,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6799,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:47"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6808,
+        "linearizedBaseContracts": [
+          6808
+        ],
+        "name": "OldBlockReward",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 6806,
+              "nodeType": "Block",
+              "src": "119:25:47",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "33",
+                    "id": 6804,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "136:1:47",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_3_by_1",
+                      "typeString": "int_const 3"
+                    },
+                    "value": "3"
+                  },
+                  "functionReturnParameters": 6803,
+                  "id": 6805,
+                  "nodeType": "Return",
+                  "src": "129:8:47"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6807,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "bridgesAllowedLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6800,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "84:2:47"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6803,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6802,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6807,
+                  "src": "110:7:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6801,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "110:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "109:9:47"
+            },
+            "scope": 6808,
+            "src": "55:89:47",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6809,
+        "src": "25:121:47"
+      }
+    ],
+    "src": "0:147:47"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-11-26T16:22:39.699Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
