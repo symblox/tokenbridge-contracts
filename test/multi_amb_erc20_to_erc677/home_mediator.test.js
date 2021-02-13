@@ -25,7 +25,7 @@ const otherMessageId = '0x35d3818e50234655f6aebb2a1cfbf30f59568d8a4ec72066fac5a2
 const deployMessageId = '0x87b0c56ed7052872cd6ac5ad2e4d23b3e9bc7637837d099f083dae24aae5b2f2'
 const failedMessageId = '0x2ebc2ccc755acc8eaf9252e19573af708d644ab63a39619adb080a3500a4ff2e'
 
-contract('HomeMultiAMBErc20ToErc677', async accounts => {
+contract('HomeMultiAMBErc20ToErc677', async (accounts) => {
   let contract
   let token
   let ambBridgeContract
@@ -92,7 +92,7 @@ contract('HomeMultiAMBErc20ToErc677', async accounts => {
       await contract.methods['relayTokens(address,address,uint256)'](homeToken.address, user2, value, { from: user })
         .should.be.fulfilled
       return user2
-    }
+    },
   ]
 
   async function bridgeToken(token, value = oneEther, forceFail = false) {
@@ -102,7 +102,7 @@ contract('HomeMultiAMBErc20ToErc677', async accounts => {
     const encodedData = strip0x(
       web3.eth.abi.decodeParameters(
         ['bytes'],
-        receipt.rawLogs.find(log => log.address === otherSideAMBBridgeContract.address).data
+        receipt.rawLogs.find((log) => log.address === otherSideAMBBridgeContract.address).data
       )[0]
     )
     const data = `0x${encodedData.slice(2 * (4 + 20 + 8 + 20 + 20 + 4 + 1 + 1 + 1 + 2 + 2))}` // remove AMB header
@@ -124,12 +124,7 @@ contract('HomeMultiAMBErc20ToErc677', async accounts => {
     const homeToken = await PermittableToken.at(events[0].returnValues.homeToken)
     const fee = await contract.getFee(await contract.FOREIGN_TO_HOME_FEE(), ZERO_ADDRESS)
     const rewardAccounts = (await contract.rewardAddressCount()).toNumber()
-    const bridgedValue =
-      rewardAccounts > 0
-        ? toBN(value)
-            .mul(oneEther.sub(fee))
-            .div(oneEther)
-        : value
+    const bridgedValue = rewardAccounts > 0 ? toBN(value).mul(oneEther.sub(fee)).div(oneEther) : value
     expect(await homeToken.balanceOf(user)).to.be.bignumber.equal(bridgedValue)
     return homeToken
   }
@@ -285,7 +280,7 @@ contract('HomeMultiAMBErc20ToErc677', async accounts => {
   })
 
   describe('getBridgeMode', () => {
-    it('should return mediator mode and interface', async function() {
+    it('should return mediator mode and interface', async function () {
       const bridgeModeHash = '0xb1516c26' // 4 bytes of keccak256('multi-erc-to-erc-amb')
       expect(await contract.getBridgeMode()).to.be.equal(bridgeModeHash)
 
@@ -403,7 +398,7 @@ contract('HomeMultiAMBErc20ToErc677', async accounts => {
       it('should register new token in deployAndHandleBridgedTokens', async () => {
         const homeToken = await bridgeToken(token)
 
-        expect(await homeToken.name()).to.be.equal('TEST on xDai')
+        expect(await homeToken.name()).to.be.equal('TEST on BSC')
         expect(await homeToken.symbol()).to.be.equal('TST')
         expect(await homeToken.decimals()).to.be.bignumber.equal('18')
         expect(await homeToken.version()).to.be.equal('1')
@@ -419,7 +414,7 @@ contract('HomeMultiAMBErc20ToErc677', async accounts => {
         token = await ERC677BridgeToken.new('', 'TST', 18)
         const homeToken = await bridgeToken(token)
 
-        expect(await homeToken.name()).to.be.equal('TST on xDai')
+        expect(await homeToken.name()).to.be.equal('TST on BSC')
         expect(await homeToken.symbol()).to.be.equal('TST')
         expect(await homeToken.decimals()).to.be.bignumber.equal('18')
       })
@@ -428,7 +423,7 @@ contract('HomeMultiAMBErc20ToErc677', async accounts => {
         token = await ERC677BridgeToken.new('TEST', '', 18)
         const homeToken = await bridgeToken(token)
 
-        expect(await homeToken.name()).to.be.equal('TEST on xDai')
+        expect(await homeToken.name()).to.be.equal('TEST on BSC')
         expect(await homeToken.symbol()).to.be.equal('TEST')
         expect(await homeToken.decimals()).to.be.bignumber.equal('18')
       })
@@ -746,7 +741,7 @@ contract('HomeMultiAMBErc20ToErc677', async accounts => {
         expect(await homeToken.allowance(user, contract.address)).to.be.bignumber.equal(twoEthers)
 
         await contract.methods['relayTokens(address,address,uint256)'](homeToken.address, user, ether('0.0001'), {
-          from: user
+          from: user,
         }).should.be.rejected
       })
     })
